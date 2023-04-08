@@ -15,6 +15,8 @@ const Example = () => {
     ],
   ])
 
+  console.log(todos[0])
+
   const [modalShow, setModalShow] = useState(false)
   const [draggingTodo, setDraggingTodo] = useState(null)
   const [draggingRow, setdraggingRow] = useState(null)
@@ -84,7 +86,6 @@ const Example = () => {
   const changeInput = (e) => {
     setInput(e.target.value)
   }
-
   const addNewTodo = () => {
     const newTodos = [...todos]
     const newTodo = {
@@ -127,34 +128,38 @@ const Example = () => {
     <div className="dnd">
       <h1 className="dnd-title">Кнопки</h1>
       {todos.map((row, index) => (
-        <div className="dnd-row">
-          <div className="todos">
-            {row.map((todo, indexItem) => (
-              <div
-                key={todo.id}
-                draggable
-                onDragStart={(e) => handleDragStart(e, todo, index)}
-                onDragOver={(e) => handleDragOver(e, todo, index)}
-                onDragEnd={(e) => handleDragEnd(e, todo)}
-                className="dnd-item"
-                onClick={() => openModalEdit(todo.text, index, indexItem)}
-              >
-                <span>{todo.text}</span>
+        <div style={{ display: row.length === 0 ? 'none' : 'block' }}>
+          {
+            <div className="dnd-row">
+              <div className="todos">
+                {row.map((todo, indexItem) => (
+                  <div
+                    key={todo.id}
+                    draggable
+                    onDragStart={(e) => handleDragStart(e, todo, index)}
+                    onDragOver={(e) => handleDragOver(e, todo, index)}
+                    onDragEnd={(e) => handleDragEnd(e, todo)}
+                    className="dnd-item"
+                    onClick={() => openModalEdit(todo.text, index, indexItem)}
+                  >
+                    <span>{todo.text}</span>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-          <div className="add-btn" onClick={() => openModalAdd(index)}>
-            <img className="plus" src={plus} />
-          </div>
-          <div
-            className="row-drug"
-            draggable
-            onDragStart={(e) => handleDragStart(e, row)}
-            onDragOver={(e) => handleDragOver(e, row, index, true)}
-            onDragEnd={(e) => handleDragEnd(e, row)}
-          >
-            <img className="upDown" src={upDown} />
-          </div>
+              <div className="add-btn" onClick={() => openModalAdd(index)}>
+                <img className="plus" src={plus} />
+              </div>
+              <div
+                className="row-drug"
+                draggable
+                onDragStart={(e) => handleDragStart(e, row)}
+                onDragOver={(e) => handleDragOver(e, row, index, true)}
+                onDragEnd={(e) => handleDragEnd(e, row)}
+              >
+                <img className="upDown" src={upDown} />
+              </div>
+            </div>
+          }
         </div>
       ))}
 
@@ -179,23 +184,27 @@ const Example = () => {
               <p className="modal-text">Значение</p>
               <input type="text" className="input-todo" />
             </div>
-            <div className="btn-block-modal">
-              {!isEdit && (
-                <button className="save" onClick={addNewTodo}>
-                  Сохранить
-                </button>
-              )}
-              {isEdit && (
-                <button className="save delete" onClick={deleteTodo}>
-                  Delete
-                </button>
-              )}
-              {isEdit && (
-                <button className="save edit" onClick={editTodo}>
-                  Edit
-                </button>
-              )}
-            </div>
+            {input.length > 0 ? (
+              <div>
+                <div className="btn-block-modal">
+                  {!isEdit && (
+                    <button className="save" onClick={addNewTodo}>
+                      Сохранить
+                    </button>
+                  )}
+                  {isEdit && (
+                    <button className="save delete" onClick={deleteTodo}>
+                      Delete
+                    </button>
+                  )}
+                  {isEdit && (
+                    <button className="save edit" onClick={editTodo}>
+                      Edit
+                    </button>
+                  )}
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
       )}
