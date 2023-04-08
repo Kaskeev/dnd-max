@@ -1,0 +1,139 @@
+.dnd-row {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.dnd {
+  margin-top: 30px;
+}
+.dnd-title {
+  font-size: 14px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+.todos {
+  min-width: 500px;
+  display: flex;
+}
+
+.dnd-item {
+  text-align: center;
+  width: 100%;
+  border: none;
+  background-color: #e0e7ff;
+  padding: 8px 10px;
+  border-radius: 10px;
+  min-width: 50px;
+  font-size: 14px;
+  color: #6138ca;
+  margin: 5px;
+  font-weight: 600;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  cursor: pointer;
+  border: 1px dashed #e6e6e6;
+  border-radius: 10px;
+}
+
+.modal-container {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 160vh;
+  width: 100vw;
+  background-color: black;
+  opacity: 0.8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.modal-content {
+  padding: 20px 30px;
+  z-index: 10;
+  width: 650px;
+  height: 300px;
+  background-color: white !important;
+  display: flex;
+  flex-direction: column;
+  border-radius: 4px;
+  opacity: 2 !important;
+}
+
+.input-todo {
+  padding: 8px 12px;
+  width: 100%;
+  height: 40px;
+  margin-top: 5px;
+  border-radius: 10px;
+  border: 1px solid rgb(185, 183, 183);
+  transition: 2s ease-out;
+}
+
+.row-drug {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.plus {
+  width: 20px;
+  height: 20px;
+}
+.upDown {
+  width: 16px;
+  height: 16px;
+}
+.add-new-row {
+  background-color: white;
+  color: #626a77;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  border: 1px dashed #e6e6e6;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-size: 14px;
+  align-items: center;
+}
+.add-row-plus {
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+}
+.modal-title {
+  font-size: 18px;
+  color: black;
+}
+.modal-block {
+  margin-top: 15px;
+}
+.modal-text {
+  font-size: 16px;
+  color: #000;
+}
+.save {
+  background-color: #4f46e5;
+  border: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  width: 115px;
+  height: 35px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.delete {
+  margin-right: 10px;
+  background-color: #ef4444;
+}
+.btn-block-modal {
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}

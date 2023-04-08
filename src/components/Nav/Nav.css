@@ -1,0 +1,44 @@
+.nav__block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.nav {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  border: 10px;
+  max-width: 780px;
+
+  padding: 5px 20px;
+  border-radius: 10px;
+}
+.nav__list {
+  cursor: pointer;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+.nav__list:hover {
+  border-radius: 15px;
+  background-color: #f1f5f9;
+}
+.nav__account {
+  min-width: 170px;
+  background-color: #fff;
+  padding: 10px 10px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav__acc-block {
+  width: 32px;
+  height: 32px;
+  background-color: #ebf4ff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blue;
+}
